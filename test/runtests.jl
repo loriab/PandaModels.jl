@@ -35,18 +35,7 @@ case_pflex = joinpath(data_path, "test_pflex.json")
 
 
 @testset "PandaModels.jl" begin
-    if isempty(ARGS) || "all" in ARGS
-        all_tests = true
-    else
-        all_tests = false
-    end
-    if all_tests || "input" in ARGS
         include("input.jl")
-    end
-    if all_tests || "pm" in ARGS
         include("call_powermodels.jl")
-    end
-    if all_tests || "bridge" in ARGS
         include("call_pandamodels.jl")
-    end
 end
